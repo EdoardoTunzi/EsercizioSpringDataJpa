@@ -1,21 +1,34 @@
 package com.example.EsercizioSpringDataJpa.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.ToString;
+import jakarta.persistence.*;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-/*
 
-@Getter
-@ToString
+
+
 @AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
 @Component
 public class Menu {
+    @Id
+    @GeneratedValue
+    private long id;
+    @OneToMany
     private List<Pizza> pizzaList;
+    @OneToMany
     private List<Drink> drinkList;
+    @OneToMany
     private List<Topping> toppingList;
+
+    public Menu(List<Pizza> pizzaList, List<Drink> drinkList, List<Topping> toppingList) {
+        this.pizzaList = pizzaList;
+        this.drinkList = drinkList;
+        this.toppingList = toppingList;
+    }
 
     public void printMenu() {
         System.out.println("******* Menu *******");
@@ -33,4 +46,4 @@ public class Menu {
 
     }
 }
-*/
+

@@ -1,12 +1,11 @@
 package com.example.EsercizioSpringDataJpa.configuration;
 
-import com.example.EsercizioSpringDataJpa.model.Drink;
+import com.example.EsercizioSpringDataJpa.model.*;
 //import com.example.EsercizioSpringDataJpa.model.Menu;
-import com.example.EsercizioSpringDataJpa.model.Pizza;
-import com.example.EsercizioSpringDataJpa.model.Topping;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,17 +120,16 @@ public class AppConfig {
         return toppings;
     }
 
- /*   @Bean("menu")
+    @Bean("menu")
     Menu menuBean(@Qualifier("pizzas") List<Pizza> pizzas,
                   @Qualifier("drinks") List<Drink> drinks,
                   @Qualifier("toppings") List<Topping> toppings) {
         return new Menu(pizzas, drinks, toppings);
     }
-*/
 
 //tavoli
 
-    /*@Bean("Tavolo1")
+    @Bean("Tavolo1")
     Tavolo getTable1() {
         return new Tavolo(1, 5, true);
     }
@@ -145,8 +143,7 @@ public class AppConfig {
     Tavolo getTable3() {
         return new Tavolo(3, 8, true);
     }
-*/
-   /* @Bean("CustomTavolo")
+    @Bean("CustomTavolo")
     @Scope("prototype")
     public Tavolo tavoloBean() {
         return new Tavolo();
@@ -157,5 +154,5 @@ public class AppConfig {
     @Scope("prototype")
     public Ordine ordineBean() {
         return new Ordine();
-    }*/
+    }
 }

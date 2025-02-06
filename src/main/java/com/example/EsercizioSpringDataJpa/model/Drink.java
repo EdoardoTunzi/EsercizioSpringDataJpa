@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "drinks")
+/*@Table(name = "drinks")*/
 @NoArgsConstructor
 @Data
 public class Drink extends MenuElement {
