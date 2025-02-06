@@ -6,6 +6,7 @@ import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+/*
 
 @Getter
 @ToString
@@ -32,3 +33,4 @@ public class Menu {
 
     }
 }
+*/

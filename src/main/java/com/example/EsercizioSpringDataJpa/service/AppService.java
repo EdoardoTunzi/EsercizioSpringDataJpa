@@ -1,9 +1,12 @@
 package com.example.EsercizioSpringDataJpa.service;
 
 import com.example.EsercizioSpringDataJpa.model.Drink;
-import com.example.EsercizioSpringDataJpa.model.Menu;
+//import com.example.EsercizioSpringDataJpa.model.Menu;
 import com.example.EsercizioSpringDataJpa.model.Pizza;
 import com.example.EsercizioSpringDataJpa.model.Topping;
+import com.example.EsercizioSpringDataJpa.repository.DrinkDAORepository;
+import com.example.EsercizioSpringDataJpa.repository.PizzaDAORepository;
+import com.example.EsercizioSpringDataJpa.repository.ToppingDAORepository;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -41,11 +44,17 @@ public class AppService {
 
     @Autowired @Qualifier("toppings_salami") private ObjectProvider<Topping> salamiToppingProvider;
 
-    @Autowired @Qualifier("menu") ObjectProvider<Menu> menuObjectProvider;
+    /*@Autowired @Qualifier("menu") ObjectProvider<Menu> menuObjectProvider;*/
 
-    public Menu createMenu() {
+    @Autowired
+    PizzaDAORepository dbPizza;
+    @Autowired
+    ToppingDAORepository dbTopping;
+    @Autowired
+    DrinkDAORepository dbDrink;
+   /* public Menu createMenu() {
         return menuObjectProvider.getObject();
-    }
+    }*/
 
    /* public Tavolo createTavolo1() {
         return tavolo1Provider.getObject();
@@ -106,4 +115,22 @@ public class AppService {
     public Topping createSalamiTopping() {
         return salamiToppingProvider.getObject();
     }
+
+    //metodi jpa
+    public void insertPizza(Pizza pizza) {
+        dbPizza.save(pizza);
+        System.out.println("Pizza " + pizza.getName() + " inserita nel DB");
+    }
+
+    public void insertTopping(Topping topping) {
+        dbTopping.save(topping);
+        System.out.println("Topping salvato in DB");
+    }
+
+    public void insertDrink(Drink drink) {
+        dbDrink.save(drink);
+    }
+
+
+
 }

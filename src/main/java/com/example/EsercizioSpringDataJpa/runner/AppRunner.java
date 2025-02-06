@@ -1,8 +1,9 @@
 package com.example.EsercizioSpringDataJpa.runner;
 
-import com.example.EsercizioSpringDataJpa.model.Menu;
-import com.example.EsercizoBE_U2_W1_D1_Spring.model.*;
-import com.example.EsercizoBE_U2_W1_D1_Spring.service.AppService;
+//import com.example.EsercizioSpringDataJpa.model.Menu;
+
+import com.example.EsercizioSpringDataJpa.model.Topping;
+import com.example.EsercizioSpringDataJpa.service.AppService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
@@ -18,10 +19,27 @@ public class AppRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       /* Menu menu = appService.createMenu();
-        menu.printMenu();
+        //Toppings
+        appService.insertTopping(appService.createCheeseTopping());
+        appService.insertTopping(appService.createTomatoTopping());
+        appService.insertTopping(appService.createHamTopping());
+        appService.insertTopping(appService.createPineappleTopping());
+        appService.insertTopping(appService.createSalamiTopping());
 
-        Tavolo t1 = appService.createTavolo1();
+        //Pizzas
+        appService.insertPizza(appService.createMargheritaPizza());
+        appService.insertPizza(appService.createHawaiianPizza());
+        appService.insertPizza(appService.createSalamiPizza());
+        appService.insertPizza(appService.createSalamiPizzaXL());
+
+
+
+
+
+        /* Menu menu = appService.createMenu();
+        menu.printMenu();*/
+
+       /* Tavolo t1 = appService.createTavolo1();
         Ordine o1 = new Ordine(4, t1);
         o1.addMenuElement(appService.createMargheritaPizza());
         o1.addMenuElement(appService.createHawaiianPizza());

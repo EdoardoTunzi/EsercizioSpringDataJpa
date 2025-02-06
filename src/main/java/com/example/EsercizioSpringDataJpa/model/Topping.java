@@ -1,10 +1,13 @@
 package com.example.EsercizioSpringDataJpa.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-
-/*@NoArgsConstructor(force = true)*/
-
+@Entity
+@Table(name = "toppings")
+@NoArgsConstructor
 @Data
 public class Topping extends MenuElement {
 

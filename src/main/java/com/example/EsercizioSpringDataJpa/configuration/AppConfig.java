@@ -1,10 +1,9 @@
 package com.example.EsercizioSpringDataJpa.configuration;
 
 import com.example.EsercizioSpringDataJpa.model.Drink;
-import com.example.EsercizioSpringDataJpa.model.Menu;
+//import com.example.EsercizioSpringDataJpa.model.Menu;
 import com.example.EsercizioSpringDataJpa.model.Pizza;
 import com.example.EsercizioSpringDataJpa.model.Topping;
-import com.example.EsercizoBE_U2_W1_D1_Spring.model.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -122,13 +121,13 @@ public class AppConfig {
         return toppings;
     }
 
-    @Bean("menu")
+ /*   @Bean("menu")
     Menu menuBean(@Qualifier("pizzas") List<Pizza> pizzas,
                   @Qualifier("drinks") List<Drink> drinks,
                   @Qualifier("toppings") List<Topping> toppings) {
         return new Menu(pizzas, drinks, toppings);
     }
-
+*/
 
 //tavoli
 
